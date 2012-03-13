@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'builder'
 
-get '/index' do
+get '/' do
       File.read(File.join('public', 'index.html'))
 end
 
@@ -14,11 +14,12 @@ get '/public/twilio_tides.rb' do
 end
 
 
-post '/' do
+post '/test' do
   builder do |xml|
     xml.instruct!
     xml.Response do
       xml.Say("Hello from my Heroku app")
+      xml.Sms("Hello from my Heroku app")
     end
   end
 end
