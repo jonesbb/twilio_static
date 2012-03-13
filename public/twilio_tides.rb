@@ -8,7 +8,7 @@
 
 require 'rubygems'
 require 'hpricot'
-require 'twilio-ruby'
+#require 'twilio-ruby'
 #require 'sinatra'
 require 'builder'
 
@@ -18,7 +18,7 @@ cdate = t.strftime("%Y/%m/%d")
 
 
 # Read in the tides xml file
-xml = File.read('9410840_2012_tides.xml')
+xml = File.read('public/9410840_2012_tides.xml')
 
 
 # Initiate the variable to send in the SMS
@@ -38,8 +38,8 @@ doc = Hpricot::XML(xml)
 end
 
 # Join the array into one string
-@tide_today = @tide_today.map! { |p| "#{p}" }.join(", ")
-#puts @tide_today
+@@tide_today = @tide_today.map! { |p| "#{p}" }.join(", ")
+puts @tide_today
 
 
 

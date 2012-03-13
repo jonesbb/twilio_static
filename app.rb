@@ -6,7 +6,10 @@ get '/' do
 end
 
 get '/hello' do
-  "Hello, world!"
+  puts "Hello, world!"
+  load 'public/twilio_tides.rb'
+  puts "Here's tide info: #{@@tide_today}"
+
 end
 
 get '/public/twilio_tides.rb' do
@@ -25,11 +28,11 @@ post '/test' do
 end
 
 post '/reply' do
-  load '/public/twilio_tides.rb'
+  load 'public/twilio_tides.rb'
   builder do |xml|
     xml.instruct!
     xml.Response do
-          xml.Say("Hi #{@tide_today}")
+          xml.Say("Hi #{@@tide_today}")
     end
   end
 end
