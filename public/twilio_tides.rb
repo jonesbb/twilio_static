@@ -41,14 +41,7 @@ end
 @tide_today = @tide_today.map! { |p| "#{p}" }.join("%0d")
 #puts @tide_today
 
-post '/reply' do
-  builder do |xml|
-    xml.instruct!
-    xml.Response do
-          xml.Sms("#{@tide_today}")
-    end
-  end
-end
+
 
 
 

@@ -23,3 +23,13 @@ post '/test' do
     end
   end
 end
+
+post '/reply' do
+  load '/public/tiolio_tides.rb'
+  builder do |xml|
+    xml.instruct!
+    xml.Response do
+          xml.Say("Hi #{@tide_today}")
+    end
+  end
+end
