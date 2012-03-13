@@ -9,7 +9,7 @@
 require 'rubygems'
 require 'hpricot'
 require 'twilio-ruby'
-require 'sinatra'
+#require 'sinatra'
 require 'builder'
 
 # Get Today's Date in yyyy/mm/dd format
@@ -38,7 +38,7 @@ doc = Hpricot::XML(xml)
 end
 
 # Join the array into one string
-@tide_today = @tide_today.map! { |p| "#{p}" }.join("%0d")
+@tide_today = @tide_today.map! { |p| "#{p}" }.join(", ")
 #puts @tide_today
 
 

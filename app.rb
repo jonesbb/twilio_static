@@ -25,7 +25,7 @@ post '/test' do
 end
 
 post '/reply' do
-  load '/public/tiolio_tides.rb'
+  load '/public/twilio_tides.rb'
   builder do |xml|
     xml.instruct!
     xml.Response do
