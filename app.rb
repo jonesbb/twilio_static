@@ -14,8 +14,17 @@ get '/hello' do
 
 end
 
+
+
+def get_or_post(path, opts={}, &block)
+  get(path, opts, &block)
+  post(path, opts, &block)
+end
+
+
+
 # Create the TwiML response to read out the tide data
-post '/reply' do
+get_or_post '/tides' do
   load 'public/twilio_tides.rb'
   builder do |xml|
     xml.instruct!
@@ -34,10 +43,10 @@ post '/loop' do
         builder do |xml|
               xml.instruct!
               xml.Response do
-                xml.Say("Caio")
+                xml.Say("Choww.")
               end
         end
     else
-      redirect '/reply'
+      redirect '/tides'
     end
 end 
