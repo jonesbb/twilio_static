@@ -21,7 +21,7 @@ post '/reply' do
     xml.instruct!
     xml.Response do
             xml.Say("Hi #{@@tide_today}")
-            xml.Gather(:action=>"loop", :numDigits => 1) do
+            xml.Gather(:action=>"/loop", :numDigits => 1) do
                   xml.Say("Press one to repeat or two to end this call.")
             end
     end
@@ -30,7 +30,7 @@ end
 
 # Loop the caller's feedback
 post '/loop' do
-    if params['Digits'] != '1'
+    if !params['Digits'] or params['Digits'] != '1'
         builder do |xml|
               xml.instruct!
               xml.Response do
