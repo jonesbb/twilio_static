@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'builder'
 
-# Define the route for the index.html
+# Define the route for the index.html - static homepage for the app
 get '/' do
       File.read(File.join('public', 'index.html'))
 end
@@ -14,13 +14,12 @@ get '/hello' do
 
 end
 
-
-
+# Define a method that accepts both post and get requests
+# This is useful because of the /loop redirect to /tides
 def get_or_post(path, opts={}, &block)
   get(path, opts, &block)
   post(path, opts, &block)
 end
-
 
 
 # Create the TwiML response to read out the tide data
@@ -43,7 +42,7 @@ post '/loop' do
         builder do |xml|
               xml.instruct!
               xml.Response do
-                xml.Say("Choww.")
+                xml.Say("C-h-o-w-w.")
               end
         end
     else

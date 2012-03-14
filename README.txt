@@ -1,7 +1,8 @@
 This is a Twilio demo application
 
 Function:
-Tells the caller what the Santa Monica Tides are for that particular day.
+Tells the caller what the Santa Monica Tides are for that particular day,
+and give the caller the option to repeat the info or hangup.
 
 Components:
 1) Started with a quick-start skeleton for one page static sites on Heroku.
@@ -12,4 +13,4 @@ Credit to Dan Pritchett for this skeleton app. http://github.com/dpritchett/wweb
 The xml source is a downloaded table of tides for 2012 found at this website:
 http://co-ops.nos.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?Stationid=9410840
 
-3) Filled in the skeleton app.rb
+3) Filled in the skeleton app.rb with Twilio get/post commands to control the voice app
