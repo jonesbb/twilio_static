@@ -21,7 +21,7 @@ post '/reply' do
     xml.instruct!
     xml.Response do
             xml.Say("Hi #{@@tide_today}")
-            xml.Gather(:action=>"/loop", :numDigits => 1) do
+            xml.Gather(:action=>"loop", :numDigits => 1) do
                   xml.Say("Press one to repeat or two to end this call.")
             end
     end
