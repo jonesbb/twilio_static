@@ -42,7 +42,7 @@ post '/loop' do
         builder do |xml|
               xml.instruct!
               xml.Response do
-                xml.Say("C-h-o-w-w.")
+                xml.Say("Adios.")
               end
         end
     else
