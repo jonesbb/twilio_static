@@ -14,3 +14,6 @@ The xml source is a downloaded table of tides for 2012 found at this website:
 http://co-ops.nos.noaa.gov/noaatidepredictions/NOAATidesFacade.jsp?Stationid=9410840
 
 3) Filled in the skeleton app.rb with Twilio get/post commands to control the voice app
+
+A description of assembling this app is at:
+http://hacking-idiot.blogspot.com/2012/03/how-to-make-twilio-voice-app-hosted-by.html
